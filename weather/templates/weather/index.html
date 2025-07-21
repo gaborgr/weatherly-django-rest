@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Weatherly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-gray-100 min-h-screen">
+    <div class="container mx-auto p-4 max-w-2xl">
+        <!-- Tarjeta del formulario -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+            <h1 class="text-3xl font-bold text-blue-600 mb-4">Weatherly 🌦️</h1>
+            <form method="GET" action="/" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Ciudad</label>
+                        <input type="text" name="city" placeholder="Ej: Santiago" 
+                               class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">País (Código)</label>
+                        <input type="text" name="country" placeholder="Ej: cl" 
+                               class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+                <button type="submit" 
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg transition duration-200">
+                    Consultar Clima
+                </button>
+            </form>
+        </div>
+
+        <!-- Tarjeta de resultados -->
+        {% if weather_data %}
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <div class="flex items-center space-x-4 mb-4">
+                <h2 class="text-2xl font-semibold text-gray-800">
+                    {{ weather_data.location.city }}, {{ weather_data.location.country }}
+                </h2>
+                <span class="text-lg text-blue-600">{{ weather_data.temperature }}°C</span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-500">Humedad</p>
+                    <p class="text-xl font-medium">{{ weather_data.humidity }}%</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-500">Viento</p>
+                    <p class="text-xl font-medium">{{ weather_data.wind_speed }} km/h</p>
+                </div>
+            </div>
+            
+            <div class="mt-4 flex items-center">
+                <span class="text-lg text-gray-700">{{ weather_data.description|capfirst }}</span>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if weather_data %}
+        <div class="mt-6 flex space-x-3">
+            <a href="/api/weather/?city={{ weather_data.location.city }}&country={{ weather_data.location.country }}" 
+            target="_blank"
+            class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
+                Ver respuesta API completa
+            </a>
+            <a href="/swagger/" 
+            target="_blank"
+            class="px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-700 transition">
+                Documentación técnica (Swagger)
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

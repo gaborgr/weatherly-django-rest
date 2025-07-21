@@ -26,7 +26,6 @@ API RESTful para consultar datos climáticos en tiempo real, con interfaz amigab
 | Django              | Backend principal            |
 | Django REST Framework | API REST                   |
 | Tailwind CSS        | Estilos del frontend         |
-| HTMX               | Interactividad (opcional)    |
 | Redis              | Caché de datos               |
 | OpenWeatherMap     | Datos climáticos             |
 

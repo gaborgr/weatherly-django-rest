@@ -4,6 +4,11 @@
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/Django-4.2-brightgreen)](https://www.djangoproject.com/)
 
+## 🎬 Demo
+
+![Demo Weatherly](docs/images/demo-weatherly.gif)
+
+
 API RESTful para consultar datos climáticos en tiempo real, con interfaz amigable y documentación Swagger. Desarrollado por [Gabriel Guerra](https://github.com/gaborgr).
 
 ![Interfaz de Weatherly](./docs/images/result.PNG)  

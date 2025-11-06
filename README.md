@@ -6,6 +6,9 @@
 
 API RESTful para consultar datos climáticos en tiempo real, con interfaz amigable y documentación Swagger. Desarrollado por [Gabriel Guerra](https://github.com/gaborgr).
 
+[![Ver video de demostración](https://cdn.loom.com/sessions/thumbnails/d969e2135e70436cb0c2a47d041edc62-with-play.gif)](https://www.loom.com/share/d969e2135e70436cb0c2a47d041edc62)
+
+
 ![Interfaz de Weatherly](./docs/images/result.PNG)  
 *(Ejemplo: Interfaz principal con tarjeta de resultados)*
 
